@@ -1,0 +1,16 @@
+{
+    "name": "YoutubeDateFinder",
+    "version": "0.0.1",
+    "description":"With YoutubeDateFinder app, you'll be able to search for your favourites Youtube videos by uploaded date",
+    "engines":{
+        "node": "6.9.1"
+    },
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "underscore": "1.5.2"
+    },
+    "license": "MIT"
+}
