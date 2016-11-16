@@ -9,6 +9,10 @@
     "scripts": {
         "start": "node app.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/alvarovp27/YoutubeDateFinder"
+    },
     "dependencies": {
         "underscore": "1.5.2"
     },
