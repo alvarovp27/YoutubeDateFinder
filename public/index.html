@@ -1,0 +1,61 @@
+<html ng-app="youtubeDateFinder">
+    <head>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <script src="/index.js"></script>
+    </head>
+    <body md-theme="indigo" md-theme-watch="true">
+      <!-- https://material.angularjs.org/1.1.0/api/directive/mdColors -->
+      <div layout="row" md-colors="{background: 'indigo-accent-900-0.43'}" layout-align="space-between center">
+      <div>
+          <md-button>Home</md-button>
+          <md-menu>
+              <md-button md-menu-origin ng-click="$mdOpenMenu()">Help</md-button>
+              <md-menu-content width="2">
+                  <md-menu-item>
+                      <md-button>Help</md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                      <md-button>About</md-button>
+                  </md-menu-item>
+              </md-menu-content>
+          </md-menu>
+      </div>
+      <h3>YouTube Video Finder by Date</h3>
+      <div class="nav-buttons">
+          <md-button class="md-raised md-accent">Sign in</md-button>
+          <md-button class="md-raised md-warn">Log Out</md-button>
+      </div>
+      </div>
+
+        <md-content layout-padding="">
+          <div>
+            <form name="userForm">
+              <div layout-gt-sm="row" layout-align="center center">
+                <md-input-container class="md-block" flex-gt-sm="50" >
+                  <label>What would you like to find?</label>
+                  <input ng-model="finder.keyword">
+                </md-input-container>
+                <md-input-container>
+                  <label>From</label>
+                  <md-datepicker ng-model="finder.from"></md-datepicker>
+                </md-input-container>
+                <md-input-container>
+                  <label>To</label>
+                  <md-datepicker ng-model="finder.to"></md-datepicker>
+                </md-input-container>
+              </div>
+              <div layout-gt-sm="row" layout-align="center center">
+                <md-button class="md-raised md-accent">Button</md-button>
+              </div>
+
+            </form>
+          </div>
+        </md-content>
+
+    </body>
+</html>
