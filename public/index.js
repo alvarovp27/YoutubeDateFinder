@@ -4,6 +4,12 @@ app.controller('helloWorld', function($scope){
     $scope.hello = "Hello World!";
 });
 
+app.controller('searchFormController', function($scope){
+    $scope.search = function(find){
+        $scope.findTest = angular.copy(find);
+    };
+});
+
 app.config(function($mdThemingProvider) {
     $mdThemingProvider.theme('indigo')
       .primaryPalette('indigo')

@@ -32,8 +32,8 @@
       </div>
       </div>
 
-        <md-content layout-padding="">
-          <div>
+        <md-content layout-padding >
+          <div ng-controller="searchFormController">
             <form name="userForm">
               <div layout-gt-sm="row" layout-align="center center">
                 <md-input-container class="md-block" flex-gt-sm="50" >
@@ -50,12 +50,44 @@
                 </md-input-container>
               </div>
               <div layout-gt-sm="row" layout-align="center center">
-                <md-button class="md-raised md-accent">Button</md-button>
+                <md-button class="md-raised md-accent" ng-click="search(finder)">Search!</md-button>
               </div>
 
             </form>
+            {{findTest}}
           </div>
         </md-content>
+      
+      <div layout-gt-sm="row" layout-align="center center">
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch flex="30">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Title</span>
+            <span class="md-subhead">Channel</span>
+          </md-card-title-text>
+          <md-card-title-media class="md-media-md">
+              <img ng-src="https://i.ytimg.com/vi/IS4-Oaiipp8/maxresdefault.jpg" width="176" height="110"></img>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius...</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Watch</md-button>
+        </md-card-actions>
+      </md-card>
+      
+      </div>
+
+<!-- use it for displaying video cards
+
+    <md-virtual-repeat-container id="vertical-container">
+      <div md-virtual-repeat="item in ctrl.dynamicItems" md-on-demand
+          class="repeated-item" flex>
+        {{item}}
+      </div>
+    </md-virtual-repeat-container>
+-->
 
     </body>
 </html>
