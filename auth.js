@@ -36,6 +36,14 @@ function getOAuth2ClientAuthenticated(tokens){
     return oauth2Client;
 }
 
+function getYoutubeObject(tokens){
+    var youtube = google.youtube({
+        version: 'v3',
+        auth: getOAuth2ClientAuthenticated(tokens)
+    });
+    return youtube;
+}
+
 //Middleware function
 function setupAuth(app){
     app.use(session({secret: 'xFcSksjlaowNgEsXgGHjhB&57624kjBgf390dvJHaZq'}));
@@ -64,10 +72,7 @@ function setupAuth(app){
             }
             //Now we're to take the name of the user's channel.
             //First of all, we create the youtube variable which will let us do petitions
-            var youtube = google.youtube({
-                version: 'v3',
-                auth: getOAuth2ClientAuthenticated(tokens)
-            });
+            var youtube = getYoutubeObject(tokens);
             //Now we do the petition to the google's API
             youtube.channels.list({
                 part: 'snippet',
@@ -101,4 +106,5 @@ function setupAuth(app){
 
 
 module.exports = setupAuth;
+module.exports.youtube = getYoutubeObject;
 
