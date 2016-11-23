@@ -1,6 +1,10 @@
 var express = require('express');
+var wagner = require('wagner-core');
 
 var app = express();
+
+wagner.invoke(require('./auth'), {app: app});
+
 app.use('/api', require('./api'));
 app.use(express.static(__dirname+'/public/', {maxAge: 4*60*60*1000}));
 
