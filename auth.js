@@ -42,20 +42,23 @@ function setupAuth(app){
                 auth: oauth2Client
             });
             
-            
-
             youtube.channels.list({
                 part: 'snippet',
                 mine: true
             }, function(err, data){
                 console.log(err);
-                console.log(data.items[0].snippet.title);
-                //does not work
-                req.session.channelName = "data.items[0].snippet.title";
+                console.log('datossss: '+data);
+                if(!err){
+                    console.log(data.items[0].snippet.title);
+                    //does not work
+                    req.session.channelName = data.items[0].snippet.title;
+                    //console.log("showing req var "+hola);
+                }
+                console.log('channel name!!: '+req.session.channelName);
+                req.session.token = tokens;
+                res.redirect('/');
             });
-            
-            req.session.token = tokens;
-            res.redirect('/');
+
         });
     });
 
